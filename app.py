@@ -5,15 +5,15 @@ from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 import os, json
 
-===== 1. 讀取 Google Sheets API 金鑰（從 Secrets） =====
+===== 1. Google Sheets API 金鑰設定（從 Secrets） =====
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-key_str = os.environ["your_key"]
+key_str = os.environ["your_key"] # ← 這裡從 Streamlit Secrets 讀取
 key_dict = json.loads(key_str)
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, scope)
 gc = gspread.authorize(credentials)
 
-===== 2. 打開 Google Sheet =====
-sheet = gc.open("Emotion comment").sheet1 # ← 換成你的 Sheet 名稱
+===== 2. 連接 Google Sheet =====
+sheet = gc.open("Emotion comment").sheet1 # ← 換成你的試算表名稱
 
 ===== 3. Streamlit 畫面設定 =====
 st.set_page_config(page_title="匿名心情日記牆", layout="centered")
