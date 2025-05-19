@@ -1,3 +1,8 @@
+from io import StringIO
+import os, json
+key_str = os.environ["your_key"]
+key_dict = json.loads(key_str)
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, scope)
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
