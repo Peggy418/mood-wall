@@ -1,26 +1,10 @@
 import streamlit as st
-import gspread
 from google.oauth2.service_account import Credentials
-import pandas as pd
-from datetime import datetime
-import json
+import gspread
 
-# 讀取 service account dict
-gcp_sa_info = st.secrets["gcp_service_account"]
-
-# 設定授權範圍
-scope = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive"
-]
-
-# 用 dict 建立 Credentials 物件
-creds = Credentials.from_service_account_info(gcp_sa_info, scopes=scope)
-
-# 建立 gspread client
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scope)
 gc = gspread.authorize(creds)
-
-# 開啟試算表
 sheet = gc.open("Emotion comment").sheet1
 
 # Streamlit UI
