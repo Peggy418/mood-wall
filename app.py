@@ -1,14 +1,21 @@
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, firestore
+import tempfile
+import json
 
-# 讀取 Streamlit secrets 裡的 GCP service account (dict)
+# 從 Streamlit secrets 拿到 service account dict
 gcp_service_account_info = st.secrets["gcp_service_account"]
 
-# 用 dict 直接建立憑證，不用 from_dict()
-cred = credentials.Certificate(gcp_service_account_info)
+# 把 service account JSON 寫入臨時檔案
+with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+    json.dump(gcp_service_account_info, f)
+    temp_cred_path = f.name
 
-# 初始化 Firebase app
+# 用臨時 JSON 檔案路徑建立 Firebase 憑證
+cred = credentials.Certificate(temp_cred_path)
+
+# 初始化 Firebase app（避免重複初始化）
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
@@ -34,7 +41,7 @@ with st.form("diary_form"):
         })
         st.success("日記已送出！")
 
-# 顯示資料
+# 顯示最新的 10 筆日記
 st.subheader("最新的心情日記")
 entries = db.collection("diary_entries").order_by("name").limit(10).stream()
 
@@ -43,4 +50,3 @@ for entry in entries:
     st.markdown(f"**{data['name']}**（{data['mood']}）說：")
     st.write(f"> {data['message']}")
     st.markdown("---")
-
