@@ -5,14 +5,12 @@ from firebase_admin import credentials, firestore
 # 讀取 Streamlit secrets 裡的 GCP service account (dict)
 gcp_service_account_info = st.secrets["gcp_service_account"]
 
-# 用 from_dict() 來建立憑證
-cred = credentials.Certificate.from_dict(gcp_service_account_info)
+# 用 dict 直接建立憑證，不用 from_dict()
+cred = credentials.Certificate(gcp_service_account_info)
 
 # 初始化 Firebase app
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
-
-db = firestore.client()
 
 # 取得 Firestore 實例
 db = firestore.client()
@@ -29,7 +27,7 @@ with st.form("diary_form"):
 
     if submitted:
         # 將資料寫入 Firestore
-        doc_ref = db.collection("diary_entries").add({
+        db.collection("diary_entries").add({
             "name": name if name else "匿名",
             "mood": mood,
             "message": message,
