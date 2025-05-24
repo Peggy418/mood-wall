@@ -12,7 +12,6 @@ key_dict = json.loads(key_str)
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, scope)
 gc = gspread.authorize(credentials)
 
-—
  
 # 📝 換成你的 Google Sheet 名稱 
 sheet = gc.open("Emotion comment").sheet1 
