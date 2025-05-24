@@ -1,12 +1,13 @@
-[gcp_service_account]
-type = "service_account"
-project_id = "carbide-comfort-460206-s8"
-private_key_id = "c4e876d4c60cb7279bb984f622df20ac7b12f1ce"
-private_key = "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4HKzhOuckNyBW\n...省略...\n-----END PRIVATE KEY-----\n"
-client_email = "id-923@carbide-comfort-460206-s8.iam.gserviceaccount.com"
-client_id = "103859052548816081980"
-auth_uri = "https://accounts.google.com/o/oauth2/auth"
-token_uri = "https://oauth2.googleapis.com/token"
-auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
-client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/id-923%40carbide-comfort-460206-s8.iam.gserviceaccount.com"
-universe_domain = "googleapis.com"
+{
+  "type": "service_account",
+  "project_id": "carbide-comfort-460206-s8",
+  "private_key_id": "c4e876d4c60cb7279bb984f622df20ac7b12f1ce",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4HKzhOuckNyBW\nACREGZ69Dxz6xcQ+A4+kmiTz0ppy90+HtpjXHg40W5AXndgRvPh8ZRbVo+HWt8yp\nRSuJ/OTqSKqXFcgA0uy5Tc5T/6Fe+B1ffxaSwCWHrZH5bfuNuDuc6t/5Vh9LoW1e\nqIyRcI81ppHlu+y65BcBpI87oHtDSGLfUputgdi1Ed66fMzE+el7T1h1QSzgsrFO\n54aA2kmTeG6d54C5Yw9jSLAjqBtnCopURxFDaT8ZMqG44eHsoMrS6wrzLH2gFaj+\nGSRJ0qEBnbEcyrpbkzvJH0ffvS/sbBH4UhZg1i81ZaiUhTNHvugmgWvdynuML4KH\nu3LuXVd5AgMBAAECggEABpzxEL3+42wfezdSFigdbYkHb3J/FAMou67VuPRNm+eK\nMcO7Ra7Mr9DCIjcHNcvl2QIAiffy+rVrYoEbiT9OMaQejIK5xl3NJvLGgHnkH/cl\nhvKXqvm/31m6rozmxjZh3ccJ+HjBcwP/W7EOK4MxganT/756SFQ9B1AT3P5srwPw\n2dV5DMGclVMoLAmEBaBG8SUFM+f9w5xtc31GFakKhlzbcc6AsWY40Aif2tVMKsqr\nvJKv/yU6G6bOpqvC00+1spEtP+ErzrPa/+KAt0YPO6T383CNFjzDvu/3vvvpMiIS\nuaeLaZTFr7qbHyZQmUF2g+B+3nTDiTMTwkkU2TjYqQKBgQD5iaTcl8XBJC2DtLGZ\nihG9RLwwUSMF2mhLBM7L0GPLBGm0i6jU/9gQa3opPgPzXi3qPDRfY08vhitdI6m8\nAtBxCiQSbYZ1GA4fXvkGtZjQeNREjDwvWlp0ntR4CEOlxpEDDOteDKSzyQZK5AVY\nDMGp18T//kZWIaLDD6b4UNYIDwKBgQC84UekTqX6iU7E0PmFiguQU7lmPvVMQrxB\nUrfFBx+w3dxJjOv3NWtvY4gRgT9YF8dAsV2rzbLUGce5cDL7me6w+Pe2EayXqVgL\nt1KCvebkJEdm3X96Y4yEpFeR97PPhrlAiiYBgTI22wyfZtPW7VWS/Nhl5aVswsn6\nsu6CoUJf9wKBgBvbNcA6YSUSeNI/FaRiOWC7j5aFODerDgFx4/P0q286auJwxMQi\nW2hZ1yVLev1sAgwn9GDBoVFY1PZsyMHoPoSf8S7tcxkXOlxeKcaJ9ykuk+OjFATl\nPTvPj0BnC8YxyHZittOk7a30PvOVSNNveR8Qqzk4lXl//79uu+D0hTAZAoGAJVS9\nTStCQN9MkzfeaVdca70wgpXk85qpDJwluCptSA7BkEPrC2QihNR+Oz95XpbsicvE\ngMVaF/O0duFHIlVNSOscQn8BxsPwo/gqta6E6QiGmD0lCfKM/lZg/HehsV2mVaw4\nUMnRO+hVeVfgfLVR2Yhh2NnntTRWqVceLvFiZgcCgYBFz2ADxVWq9iQQP/CVeYv6\n5x0u85EAXgdEBUnu7zW0+u//w01uyNgroB2YRqPa/crSB3txGhnGEHUHtFovSnNn\n1up2u2FOud4Iu2ZBt9qwDjCDJGW2jQJpNpoYAUDnAgYe6OV/KBNlaMN9nkx/hatz\nSeGdc/Niaa7x3yMYxukK5A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "id-923@carbide-comfort-460206-s8.iam.gserviceaccount.com",
+  "client_id": "103859052548816081980",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/id-923%40carbide-comfort-460206-s8.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
