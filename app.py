@@ -1,16 +1,18 @@
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, firestore
-import json
-import os
 
-# 讀取 Streamlit secrets 裡的 GCP service account
+# 讀取 Streamlit secrets 裡的 GCP service account (dict)
 gcp_service_account_info = st.secrets["gcp_service_account"]
 
-# 初始化 Firebase Admin SDK（只初始化一次）
+# 用 from_dict() 來建立憑證
+cred = credentials.Certificate.from_dict(gcp_service_account_info)
+
+# 初始化 Firebase app
 if not firebase_admin._apps:
-    cred = credentials.Certificate(gcp_service_account_info)
     firebase_admin.initialize_app(cred)
+
+db = firestore.client()
 
 # 取得 Firestore 實例
 db = firestore.client()
